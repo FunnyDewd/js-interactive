@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Javascript Interactive</title>
+  <style>
+    .slide-code {
+      display: block;
+      white-space: pre;
+      font-family: monospace;
+      font-size: 15px;
+      line-height: 1.3;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide current">
+    <div id="domNode">
+      This is a DOM <span>Node</span>.
+    </div>
+    <p>this is a paragraph</p>
+    <script id="slide-1" class="slide-code" contenteditable>
+      var a = 2;
+      var theNode = document.querySelector("#domNode>span");
+      theNode.innerHTML = "Element";
+    </script>
+
+  </div>
+
+  <script>
+    var slide1 = document.getElementById("slide-1");
+    slide1.addEventListener("blur", function(){
+      var theLine = this.innerHTML;
+      eval(theLine);
+    });
+  </script>
+</body>
+</html>
