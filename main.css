@@ -23,6 +23,13 @@ body {
   border-left: 1px solid orange;
 }
 
+.slide-css-code.top, .slide-js-code.top {
+  bottom: auto;
+  top: 0;
+  border-top: none;
+  border-bottom: 1px solid orange;
+}
+
 .slide-css-code:focus, .slide-js-code:focus {
   background: white;
   color: #444;

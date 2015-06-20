@@ -21,7 +21,7 @@
 
     </div>
 
-    <div class="slide current">
+    <div class="slide">
       <h2>This is a CSS slide.</h2>
       <div id="domCSSNode">
         This is a DOM CSS <span>Node</span>.
@@ -37,7 +37,29 @@
       </style>
 
     </div>
-  </div>
+
+    <div class="slide current">
+      <h2>This is a JS &amp; CSS slide.</h2>
+      <div id="domJSCSSNode">
+        This is a DOM JS CSS <span>Node</span>.
+      </div>
+      <p>this is a paragraph</p>
+      <style class="slide-css-code" contenteditable>
+  #domCSSNode {
+    padding: 20px;
+    border: 1px solid red;
+    font-family: arial, helvetica, sans-serif;
+    font-size: 15px;
+  }
+      </style>
+
+      <script class="slide-js-code top" contenteditable>
+      var a = 2;
+      var theNode = document.querySelector("#domNode>span");
+      theNode.innerHTML = "Element";
+      </script>
+    </div>
+    </div>
 
   <script>
     var cssSlides = document.querySelectorAll(".slide-css-code");
