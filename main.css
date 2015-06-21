@@ -1,9 +1,12 @@
 *, html * {
   box-sizing: border-box;
   }
+
 body {
   background: #ccc;
+  font-size-adjust: auto;
   }
+  j
 .slide-css-code, .slide-js-code {
   font-family: consolas, monospace;
   font-size: 16px;
@@ -40,7 +43,24 @@ body {
 .slide-css-code:focus, .slide-js-code:focus {
   color: #444;
   background: white;
+  outline-color: ;
   }
+
+.slide-css-code::after, .slide-js-code::after {
+  content: 'CSS';
+  font-family: arial, helvetica, sans-serif;
+  font-size: 16px;
+  background: darkorange;
+  color: white;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 8px;
+}
+
+.slide-js-code::after {
+  content: 'JS';
+}
 
 .slide {
   position: absolute;
