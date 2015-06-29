@@ -15,6 +15,7 @@ h1, h2, h3, h4, h5, h6, p, ol, ul, li, blockquote {
 
 h1, h2, h3, h4 {
   padding-top: .75em;
+  text-transform: capitalize;
 }
 
 p, ol, ul {
@@ -27,6 +28,10 @@ ol, ul {
 
 ul {
   list-style-type: square;
+}
+
+ol {
+  list-style-type: lower-roman;
 }
 
 li {
@@ -76,20 +81,67 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 
-.title-content {
+.title-content, .title-content-2col {
+  padding: 24px;
+}
 
+.title-content h1, .title-content-2col h1 {
+  font-size: 36px;
+  padding-bottom: .25em;
+  padding-left: .25em;
+  margin-bottom: .5em;
+  border-bottom: 2px solid darkorange;
+}
+
+.title-content .slide-content, .title-content-2col .slide-content {
+  font-size: 1.25em;
+  padding: .5em;
+}
+
+.title-content .slide-content ul, .title-content-2col .slide-content ul, .title-content .slide-content ol, .title-content-2col .slide-content ol {
+  padding: 1em;
+}
+
+.title-content .slide-content li {
+  font-size: 1.15em;
+  padding: 0;
 }
 
 .title-content-2col {
 
 }
 
+.title-content-2col .slide-content:nth-child(odd) {
+  width: 49%;
+  padding-left: 3%;
+  display: inline-block;
+}
+
+.title-content-2col .slide-content:nth-child(even) {
+  width: 49%;
+  padding-right: 3%;
+  display: inline-block;
+}
+
+/* Yes, I know we have to refactor here */
 .content-css {
 
 }
+.content-css h1, .content-js h1 {
+  font-size: 36px;
+  padding-bottom: .25em;
+  padding-left: .25em;
+  margin-bottom: .5em;
+  border-bottom: 2px solid darkorange;
+}
 
-.content-js {
+.content-css .slide-content, .content-js .slide-content {
+  width: 49%;
+  padding: 1em;
+}
 
+.content-css, .content-js {
+  padding: 0 24px;
 }
 
 .content-html {

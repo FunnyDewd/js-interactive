@@ -1,13 +1,12 @@
 *, html * {
   box-sizing: border-box;
-  }
+}
 
 body {
   background: #ccc;
   font-size-adjust: auto;
-  }
-  j
-.slide-css-code, .slide-js-code {
+}
+.slide-code, .slide-css-code, .slide-js-code {
   font-family: consolas, monospace;
   font-size: 16px;
   font-weight: bold;
@@ -30,7 +29,7 @@ body {
   border-top: 1px solid orange;
   border-left: 1px solid orange;
   background: #fafafa;
-  }
+}
 
 .slide-css-code.top, .slide-js-code.top {
   top: 0;
@@ -38,13 +37,13 @@ body {
 
   border-top: none;
   border-bottom: 1px solid orange;
-  }
+}
 
 .slide-css-code:focus, .slide-js-code:focus {
   color: #444;
   background: white;
   outline-color: ;
-  }
+}
 
 .slide-css-code::after, .slide-js-code::after {
   content: 'CSS';
@@ -77,7 +76,7 @@ body {
   border-radius: 6px;
   background: white;
   box-shadow: 3px 6px 1px 2px rgba(128, 128, 128,.3);
-  }
+}
 
 .slide::before {
   position: absolute;
@@ -85,8 +84,8 @@ body {
   left: 30px;
 
   content: attr(data-slide-number);
-  }
+}
 
 .current {
   display: block;
-  }
+}
