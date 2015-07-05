@@ -36,7 +36,7 @@ function moveToPreviousSlide() {
     // do nothing
     return;
   } else {
-    
+
   }
 
   // otherwise move to the previous slide.
@@ -44,6 +44,22 @@ function moveToPreviousSlide() {
 }
 
 function moveToNextSlide() {
+  // if we are already at the first slide, do nothing, for now...
+  var currentSlide = document.querySelector(".slide.current");
+  var nextSlide = currentSlide.nextElementSibling;
+  var previousSlide = currentSlide.previousElementSibling;
+  console.dir(currentSlide);
+  console.dir(nextSlide);
+  console.dir(previousSlide);
+
+  if (!previousSlide) {
+    // do nothing
+    return;
+  } else {
+
+  }
+
+  // otherwise move to the next slide.
 
 }
 
@@ -65,16 +81,15 @@ function handleKeyDown(event){
     return;
   }
 
-  theKey = event.key || event.keyCode;
+  theKey = event.keyCode;
 
   if (theKey === LEFT_ARROW || theKey === UP_ARROW) {
     moveToPreviousSlide();
   }
 
-  if (theKey === LEFT_ARROW || theKey === UP_ARROW) {
-    moveToPreviousSlide();
+  if (theKey === RIGHT_ARROW || theKey === DOWN_ARROW) {
+    moveToNextSlide();
   }
-  console.log(theKey);
 
 }
 // bind the keypress events to the body
