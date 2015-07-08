@@ -37,6 +37,16 @@ function moveToPreviousSlide() {
     return;
   } else {
 
+    if (nextSlide) {
+      nextSlide.classList.remove('next');
+    }
+
+    currentSlide.classList.remove('current');
+    currentSlide.classList.add('next');
+    previousSlide.classList.remove('previous');
+    previousSlide.classList.add('current');
+    previousSlide.nextElementSibling.classList.add('previous');
+
   }
 
   // otherwise move to the previous slide.
@@ -52,10 +62,18 @@ function moveToNextSlide() {
   console.dir(nextSlide);
   console.dir(previousSlide);
 
-  if (!previousSlide) {
+  if (!nextSlide) {
     // do nothing
     return;
   } else {
+    if (previousSlide) {
+      previousSlide.classList.remove('previous');
+    }
+    currentSlide.classList.remove('current');
+    currentSlide.classList.add('previous');
+    nextSlide.classList.remove('next');
+    nextSlide.classList.add('current');
+    nextSlide.nextElementSibling.classList.add('next');
 
   }
 
