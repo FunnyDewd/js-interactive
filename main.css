@@ -6,7 +6,7 @@ body {
   background: #ccc;
   font-size-adjust: auto;
 }
-.slide-code, .slide-css-code, .slide-js-code {
+.code, .code textarea {
   font-family: consolas, monospace;
   font-size: 16px;
   font-weight: bold;
@@ -31,7 +31,7 @@ body {
   background: #fafafa;
 }
 
-.slide-css-code.top, .slide-js-code.top {
+.code.top {
   top: 0;
   bottom: auto;
 
@@ -39,14 +39,13 @@ body {
   border-bottom: 1px solid orange;
 }
 
-.slide-css-code:focus, .slide-js-code:focus {
+.code:focus {
   color: #444;
   background: white;
   outline-color: ;
 }
 
-.slide-css-code::after, .slide-js-code::after {
-  content: 'CSS';
+.code::after {
   font-family: arial, helvetica, sans-serif;
   font-size: 16px;
   background: darkorange;
@@ -55,10 +54,19 @@ body {
   top: 0;
   right: 0;
   padding: 8px;
+  z-index: 10;
 }
 
-.slide-js-code::after {
+.code.css::after {
+  content: 'CSS';
+}
+
+.code.js::after {
   content: 'JS';
+}
+
+.code.html::after {
+  content: 'HTML';
 }
 
 .slide {

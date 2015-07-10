@@ -1,23 +1,23 @@
 /* global console */
 /* jshint unused:false, evil: true*/
-var cssSlides = document.querySelectorAll(".slide-css-code");
-var jsSlides = document.querySelectorAll(".slide-js-code");
-var allSlides = document.querySelectorAll(".slide");
+var cssSlides = document.querySelectorAll('.slide-css-code');
+var jsSlides = document.querySelectorAll('.slide-js-code');
+var allSlides = document.querySelectorAll('.slide');
 var theDocument = document.body;
 
-[].forEach.call(allSlides, function(slide, slideNumber, slides){
+[].forEach.call(allSlides, function(slide, slideNumber, slides) {
   slide.setAttribute('data-slide-number', slideNumber + 1);
 });
 
-[].map.call(jsSlides, function(jsCode){
-  jsCode.addEventListener("blur", function(){
+[].map.call(jsSlides, function(jsCode) {
+  jsCode.addEventListener('blur', function() {
     var theLine = jsCode.innerHTML;
     eval(theLine);
   });
 });
 
-[].map.call(cssSlides, function(cssCode){
-  cssCode.addEventListener("blur", function(){
+[].map.call(cssSlides, function(cssCode) {
+  cssCode.addEventListener('blur', function() {
     var theStyles = cssCode.innerText;
     cssCode.innerHTML = theStyles;
   });
@@ -25,7 +25,7 @@ var theDocument = document.body;
 
 function moveToPreviousSlide() {
   // if we are already at the first slide, do nothing, for now...
-  var currentSlide = document.querySelector(".slide.current");
+  var currentSlide = document.querySelector('.slide.current');
   var nextSlide = currentSlide.nextElementSibling;
   var previousSlide = currentSlide.previousElementSibling;
   console.dir(currentSlide);
@@ -55,7 +55,7 @@ function moveToPreviousSlide() {
 
 function moveToNextSlide() {
   // if we are already at the first slide, do nothing, for now...
-  var currentSlide = document.querySelector(".slide.current");
+  var currentSlide = document.querySelector('.slide.current');
   var nextSlide = currentSlide.nextElementSibling;
   var previousSlide = currentSlide.previousElementSibling;
   console.dir(currentSlide);
@@ -69,6 +69,7 @@ function moveToNextSlide() {
     if (previousSlide) {
       previousSlide.classList.remove('previous');
     }
+
     currentSlide.classList.remove('current');
     currentSlide.classList.add('previous');
     nextSlide.classList.remove('next');
@@ -81,7 +82,7 @@ function moveToNextSlide() {
 
 }
 
-function handleKeyDown(event){
+function handleKeyDown(event) {
   var LEFT_ARROW = 37;
   var UP_ARROW = 38;
   var RIGHT_ARROW = 39;
@@ -89,11 +90,12 @@ function handleKeyDown(event){
   var theKey;
   var theTarget;
 
-  if(typeof event === 'undefined') {
+  if (typeof event === 'undefined') {
     event = window.event;
   }
 
   theTarget = event.target;
+
   // ignore arrow keys coming from the editable content elements
   if ('contenteditable' in theTarget.attributes) {
     return;
@@ -110,5 +112,6 @@ function handleKeyDown(event){
   }
 
 }
+
 // bind the keypress events to the body
-document.body.addEventListener("keydown", handleKeyDown, false);
+document.body.addEventListener('keydown', handleKeyDown, false);
