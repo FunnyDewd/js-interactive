@@ -2,6 +2,7 @@
 /* jshint unused:false, evil: true*/
 var cssSlides = document.querySelectorAll('.slide-css-code');
 var jsSlides = document.querySelectorAll('.slide-js-code');
+var htmlSlides = document.querySelectorAll('.slide-html-code');
 var allSlides = document.querySelectorAll('.slide');
 var theDocument = document.body;
 
@@ -20,6 +21,24 @@ var theDocument = document.body;
   cssCode.addEventListener('blur', function() {
     var theStyles = cssCode.innerText;
     cssCode.innerHTML = theStyles;
+  });
+});
+
+[].map.call(htmlSlides, function(htmlCode) {
+  // get the HTML into the textarea
+  var theContent = htmlCode.parentNode.querySelector(".slide-content");
+  var theTextarea = htmlCode.querySelector("textarea");
+  
+  theTextarea.value = theContent.innerHTML;
+  
+  theTextarea.addEventListener('blur', function(){
+    var newContent = this.value;
+    var theContent = this.parentNode.parentNode.querySelector(".slide-content");
+    theContent.innerHTML = newContent;
+  });
+  
+  theTextarea.addEventListener("keydown", function(event){
+    event.stopPropagation();
   });
 });
 
