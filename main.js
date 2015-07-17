@@ -28,15 +28,15 @@ var theDocument = document.body;
   // get the HTML into the textarea
   var theContent = htmlCode.parentNode.querySelector(".slide-content");
   var theTextarea = htmlCode.querySelector("textarea");
-  
+
   theTextarea.value = theContent.innerHTML;
-  
+
   theTextarea.addEventListener('blur', function(){
     var newContent = this.value;
     var theContent = this.parentNode.parentNode.querySelector(".slide-content");
     theContent.innerHTML = newContent;
   });
-  
+
   theTextarea.addEventListener("keydown", function(event){
     event.stopPropagation();
   });
@@ -47,9 +47,6 @@ function moveToPreviousSlide() {
   var currentSlide = document.querySelector('.slide.current');
   var nextSlide = currentSlide.nextElementSibling;
   var previousSlide = currentSlide.previousElementSibling;
-  console.dir(currentSlide);
-  console.dir(nextSlide);
-  console.dir(previousSlide);
 
   if (!previousSlide) {
     // do nothing
@@ -64,7 +61,7 @@ function moveToPreviousSlide() {
     currentSlide.classList.add('next');
     previousSlide.classList.remove('previous');
     previousSlide.classList.add('current');
-    previousSlide.nextElementSibling.classList.add('previous');
+    previousSlide.previousElementSibling.classList.add('previous');
 
   }
 
@@ -77,9 +74,6 @@ function moveToNextSlide() {
   var currentSlide = document.querySelector('.slide.current');
   var nextSlide = currentSlide.nextElementSibling;
   var previousSlide = currentSlide.previousElementSibling;
-  console.dir(currentSlide);
-  console.dir(nextSlide);
-  console.dir(previousSlide);
 
   if (!nextSlide) {
     // do nothing
